@@ -1,0 +1,16 @@
+# Generic
+function take {
+	mkdir $1
+	cd $1
+}
+
+function c {
+	cd ~/code/$1
+}
+
+# Rails
+alias sc='./script/console'
+alias sg='./script/generate'
+alias sp='./script/plugin'
+alias ss='./script/server'
+alias rmig='rake db:migrate'
