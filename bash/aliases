@@ -11,7 +11,7 @@ function c {
 alias ..='cd ..'
 
 function m {
-	cd ~code/$1
+	cd ~/code/$1
 	mate .
 }
 
