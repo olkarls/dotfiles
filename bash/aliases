@@ -10,6 +10,11 @@ function c {
 
 alias ..='cd ..'
 
+function m {
+	cd ~code/$1
+	mate .
+}
+
 # Rails
 function railsapp {
 	template=$1
