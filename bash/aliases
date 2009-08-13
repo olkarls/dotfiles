@@ -8,6 +8,9 @@ function c {
 	cd ~/code/$1
 }
 
+alias ..='cd ..'
+
+# Rails
 function railsapp {
 	template=$1
 	appname=$2
@@ -15,7 +18,6 @@ function railsapp {
 	rails $appname -m http://github.com/olkarls/rails-templates/raw/master/$template.rb -d mysql $@	
 }
 
-# Rails
 alias sc='./script/console'
 alias sg='./script/generate'
 alias sp='./script/plugin'
