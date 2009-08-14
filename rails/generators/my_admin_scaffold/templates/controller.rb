@@ -1,4 +1,5 @@
 class Admin::<%= controller_class_name %>Controller < ApplicationController
+  layout 'admin'
   # GET /<%= table_name %>
   # GET /<%= table_name %>.xml
   def index
