@@ -55,10 +55,8 @@ class MyAdminScaffoldGenerator < Rails::Generator::NamedBase
       m.directory(File.join('app/views/admin', controller_class_path, controller_file_name))
 
       for action in scaffold_views
-        m.template(
-          "public_view_#{action}.html.erb",
-          File.join('app/views', controller_class_path, controller_file_name, "#{action}.html.erb")
-        )
+        m.template("public_view_#{action}.html.erb", File.join('app/views', controller_class_path, controller_file_name, "#{action}.html.erb"))
+        puts "Generating: #{action}"
       end
       
       for action in admin_views
@@ -89,8 +87,8 @@ class MyAdminScaffoldGenerator < Rails::Generator::NamedBase
   end
 
   protected
-    # Override with your own usage banner.
-    def banner
+  # Override with your own usage banner.
+  def banner
     "Usage: #{$0} my_scaffold ModelName [field:type, field:type]"
   end
 
