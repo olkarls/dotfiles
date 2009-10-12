@@ -1,0 +1,8 @@
+%h1.heading
+	= 'New <%= singular_name.humanize %>'
+  
+-	semantic_form_for([:admin, @<%= singular_name %>]) do |form|
+	= render 'form', :form => form
+	- form.buttons do
+		= form.commit_button t(:create)
+		%li= link_to t(:cancel), admin_<%= plural_name %>_path

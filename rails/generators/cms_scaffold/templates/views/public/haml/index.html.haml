@@ -1,0 +1,14 @@
+%h1.heading
+  = "<%= plural_name.humanize %>"
+  
+%table
+  %thead.header
+    %tr
+<% attributes.each do |attribute| -%>
+      %th.<%= attribute.name %>= '<%= attribute.name.humanize %>'
+<% end -%>
+  %tbody.items.<%= plural_name %>
+    - @<%= plural_name %>.each do |<%= singular_name %>|
+      = render 'item', :<%= singular_name %> => <%= singular_name %>
+      
+= will_paginate(@<%= plural_name %>)

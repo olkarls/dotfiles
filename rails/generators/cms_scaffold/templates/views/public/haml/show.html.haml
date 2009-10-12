@@ -1,0 +1,13 @@
+%h1.heading
+  = "<%= singular_name.humanize %>"
+  
+- content_tag_for(:dl, @<%= singular_name %>) do
+<% attributes.each do |attribute| -%>
+  %dt.label= '<%= attribute.name.humanize %>'
+  %dd.<%= attribute.name -%>= h @<%= singular_name %>.try(:<%= attribute.name %>)
+<% end -%>
+  
+%p.actions
+  = link_to t(:edit).capitalize, edit_admin_<%= singular_name %>_path(@<%= singular_name %>)
+  |
+  = link_to 'Index', admin_<%= plural_name %>_path
