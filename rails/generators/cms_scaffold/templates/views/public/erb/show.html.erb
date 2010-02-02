@@ -1,0 +1,19 @@
+<h1><%%= "<%= singular_name.humanize %>" %></h1>
+  
+<%%- content_tag_for(:dl, @<%= singular_name %>) do %>
+<% attributes.each do |attribute| -%>
+  <dt class="label">
+    <%%= '<%= attribute.name.humanize %>' %>
+  </dt>
+  <dd class="<%= attribute.name -%>">
+    <%%= h @<%= singular_name %>.try(:<%= attribute.name %>) %>
+  </dd>
+<%- end -%>
+
+<%%- if has_authority(:editor) %>
+  <div class="admin_block">
+    <p>
+      <%%= link_to t(:edit).capitalize} + " " + t(:<%= singular_name %>), edit_admin_<%= singular_name %>_path(@<%= singular_name %>), :class => "edit" %>
+    </p>
+  </div>
+<%%- end -%>

@@ -1,16 +1,15 @@
-%h1.heading
-  = "<%= plural_name.humanize %>"
+%h1= t(:<%= plural_name %>).capitalize
   
 %p.actions
-  = link_to 'New <%= singular_name.humanize %>', new_admin_<%= singular_name %>_path
+  = link_to t(:new).capitalize + " " + t(:<%= singular_name %>), new_admin_<%= singular_name %>_path, :class => "new"
   
 %table
-  %thead.header
+  %thead
     %tr
 <% attributes.each do |attribute| -%>
-      %th.<%= attribute.name %>= '<%= attribute.name.humanize %>'
+      %th.<%= attribute.name %>= t(:<%= attribute.name %>).capitalize
 <% end -%>
-      %th.actions= 'Actions'
+      %th.actions= t(:actions)
   %tbody.items.<%= plural_name %>
     - @<%= plural_name %>.each do |<%= singular_name %>|
       = render 'item', :<%= singular_name %> => <%= singular_name %>

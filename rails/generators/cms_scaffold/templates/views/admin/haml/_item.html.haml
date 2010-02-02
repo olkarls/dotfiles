@@ -3,8 +3,6 @@
   %td.<%= attribute.name %>= h <%= singular_name %>.try(:<%= attribute.name %>)
 <% end -%>
   %td.actions
-    = link_to t(:show), <%= singular_name %>_path(<%= singular_name %>)
+    = link_to t(:edit).capitalize, edit_admin_<%= singular_name %>_path(<%= singular_name %>), :class => "edit"
     |
-    = link_to t(:edit), edit_admin_<%= singular_name %>_path(<%= singular_name %>)
-    |
-    = link_to 'Destroy', confirm_destruction_admin_<%= singular_name %>_path(<%= singular_name %>)
+    = link_to t(:destroy).capitalize, confirm_destruction_admin_<%= singular_name %>_path(<%= singular_name %>), :class => "delete"

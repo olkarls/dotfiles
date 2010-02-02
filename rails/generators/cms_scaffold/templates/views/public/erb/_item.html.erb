@@ -1,0 +1,7 @@
+<%%- content_tag_for(:tr, <%= singular_name -%>, :class => cycle(:odd, :even)) do %>
+<%- attributes.each do |attribute| -%>
+  <td class="<%= attribute.name %>">
+    <%%=h <%= singular_name %>.try(:<%= attribute.name %>) %>
+  </td>
+<%- end -%>
+<%%- end -%>

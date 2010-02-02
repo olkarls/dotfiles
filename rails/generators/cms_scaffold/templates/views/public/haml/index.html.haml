@@ -1,5 +1,4 @@
-%h1.heading
-  = "<%= plural_name.humanize %>"
+%h1= t(:<%= plural_name.humanize %>)
   
 %table
   %thead.header
@@ -11,4 +10,9 @@
     - @<%= plural_name %>.each do |<%= singular_name %>|
       = render 'item', :<%= singular_name %> => <%= singular_name %>
       
+- if has_authority(:editor)
+  %div.admin_block
+    %p
+    = link_to t(:edit).capitalize + " " + t(:<%= plural_name %>), edit_admin_<%= plural_name %>_path, :class => "edit"
+
 = will_paginate(@<%= plural_name %>)

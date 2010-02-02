@@ -1,0 +1,23 @@
+<h1><%%= t(:<%= plural_name %>).capitalize %></h1>
+<p class="actions">
+  <%%= link_to t(:new).capitalize + " " + t(:<%= singular_name %>), new_admin_<%= singular_name %>_path, :class => "new" %>
+</p>
+<table>
+  <thead>
+    <tr>
+<%- attributes.each do |attribute| -%>
+      <th class="<%= attribute.name %>">
+        <%%= t(:<%= attribute.name %>).capitalize %>
+      </th>
+<%- end -%>
+      <th class="actions">
+        &nbsp;
+      </th>
+    </tr>
+  <tbody class="items <%= plural_name %>">
+    <%%- @<%= plural_name %>.each do |<%= singular_name %>| -%>
+      <%%= render 'item', :<%= singular_name %> => <%= singular_name %> %>
+    <%%- end -%>
+  </tbody>
+</table>
+<%%= will_paginate(@<%= plural_name %>) %>

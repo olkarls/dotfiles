@@ -40,7 +40,7 @@ class CmsScaffoldGenerator < Rails::Generator::NamedBase
       m.class_collisions(class_name)
 
       # Controller, helper, views, test and stylesheets directories.
-      m.directory(File.join('app/models', class_path))
+      # m.directory(File.join('app/models', class_path))
       m.directory(File.join('app/controllers', controller_class_path))
       m.directory(File.join('app/helpers', controller_class_path))
       m.directory(File.join('app/views', controller_class_path, controller_file_name))
@@ -53,22 +53,25 @@ class CmsScaffoldGenerator < Rails::Generator::NamedBase
       m.directory(File.join('app/controllers/admin', controller_class_path))
       m.directory(File.join('app/helpers/admin', controller_class_path))
       m.directory(File.join('app/views/admin', controller_class_path, controller_file_name))
-
+      
+      m.directory "app/models"
+      m.template "model/model.rb", "app/models/#{singular_name}.rb"
+      
       for action in scaffold_views
-        m.template("views/public/haml/#{action}.html.haml", File.join('app/views', controller_class_path, controller_file_name, "#{action}.html.haml"))
+        m.template("views/public/#{view_extention}/#{action}.html.#{view_extention}", File.join('app/views', controller_class_path, controller_file_name, "#{action}.html.#{view_extention}"))
       end
       
-      m.template "views/public/haml/_item.html.haml", File.join('app/views', controller_class_path, controller_file_name, "_item.html.haml")
+      m.template "views/public/#{view_extention}/_item.html.#{view_extention}", File.join('app/views', controller_class_path, controller_file_name, "_item.html.#{view_extention}")
       
       for action in admin_views
         m.template(
-          "views/admin/haml/#{action}.html.haml",
-          File.join('app/views/admin', controller_class_path, controller_file_name, "#{action}.html.haml")
+          "views/admin/#{view_extention}/#{action}.html.#{view_extention}",
+          File.join('app/views/admin', controller_class_path, controller_file_name, "#{action}.html.#{view_extention}")
         )
       end
       
-      m.template "views/admin/haml/_form.html.haml", File.join('app/views/admin', controller_class_path, controller_file_name, "_form.html.haml")
-      m.template "views/admin/haml/_item.html.haml", File.join('app/views/admin', controller_class_path, controller_file_name, "_item.html.haml")
+      m.template "views/admin/#{view_extention}/_form.html.#{view_extention}", File.join('app/views/admin', controller_class_path, controller_file_name, "_form.html.#{view_extention}")
+      m.template "views/admin/#{view_extention}/_item.html.#{view_extention}", File.join('app/views/admin', controller_class_path, controller_file_name, "_item.html.#{view_extention}")
       
       m.template(
         'controllers/admin/controller.rb', File.join('app/controllers/admin', controller_class_path, "#{controller_file_name}_controller.rb")
@@ -105,13 +108,17 @@ class CmsScaffoldGenerator < Rails::Generator::NamedBase
     opt.on("--force-plural",
            "Forces the generation of a plural ModelName") { |v| options[:force_plural] = v }
   end
-
+  
+  def view_extention
+    "erb"
+  end
+  
   def scaffold_views
     %w[ index show ]
   end
   
   def admin_views
-    %w[ new edit index show confirm_destruction ]
+    %w[ new edit index confirm_destruction ]
   end
 
   def model_name

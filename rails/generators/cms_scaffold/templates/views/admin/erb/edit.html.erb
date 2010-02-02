@@ -1,0 +1,10 @@
+<h1><%%= t(:editing).capitalize + " " + t(:<%= singular_name %>) %></h1>
+<%%- semantic_form_for([:admin, @<%= singular_name %>]) do |form| -%>
+  <%%= render 'form', :form => form %>
+  <div class="buttons">
+    <%%= form.submit %>
+    <%%= t(:or) %>
+    <%%= link_to t(:cancel).capitalize, admin_<%= plural_name %>_path, :class => "cancel" %>
+  </div>
+<%%- end -%>
+<%%= link_to t(:go_to_public).capitalize, <%= singular_name %>_path %>
