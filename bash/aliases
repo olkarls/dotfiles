@@ -72,3 +72,4 @@ function sp {
 
 alias rmig='rake db:migrate'
 alias bi='bundle install'
+alias be='bundle exec'
