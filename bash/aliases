@@ -38,6 +38,8 @@ function ss {
   fi
 }
 
+alias rs='ss'
+
 function ssd {
   if [ -e script/rails ]; then
     script/rails server  --debugger $@
@@ -45,6 +47,8 @@ function ssd {
     script/server $@
   fi
 }
+
+alias rsd='ssd'
 
 function sc {
   if [ -e script/rails ]; then
@@ -54,6 +58,8 @@ function sc {
   fi
 }
 
+alias rc='rsd'
+
 function sg {
   if [ -e script/rails ]; then
     script/rails generate $@
@@ -62,6 +68,8 @@ function sg {
   fi
 }
 
+alias rg='sg'
+
 function sp {
   if [ -e script/rails ]; then
     script/rails plugin $@
@@ -69,6 +77,8 @@ function sp {
     script/plugin $@
   fi
 }
+
+alias rp='sg'
 
 alias rmig='rake db:migrate'
 alias bi='bundle install'
