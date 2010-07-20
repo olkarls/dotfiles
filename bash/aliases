@@ -83,3 +83,7 @@ alias rp='sg'
 alias rmig='rake db:migrate'
 alias bi='bundle install'
 alias be='bundle exec'
+
+function pless {
+  pygmentize $1 | less -r
+}
