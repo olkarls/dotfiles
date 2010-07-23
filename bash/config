@@ -1,4 +1,7 @@
 # Colors from http://wiki.archlinux.org/index.php/Color_Bash_Prompt
+
+# Requirement vcpromt: http://vc.gerg.ca/hg/vcprompt
+
 # misc
 NO_COLOR='\e[0m' #disable any colors
 # regular colors
