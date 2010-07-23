@@ -1,9 +1,0 @@
-<h1><%%= t(:confirm_destruction).capitalize %></h1>
-<p>
-  <%%= "#{t(:are_you_sure_you_want_to_delete)} #{t(:the_<%= singular_name %>)} #{t(:no_undo)}?" %>
-</p>
-<%%- semantic_form_for([:admin, @<%= singular_name %>], :html => { :method => :delete }) do |form| -%>
-  <%%= form.submit t(:delete).capitalize %>
-  <%%= t(:or) %>
-  <%%= link_to t(:cancel), admin_<%= plural_name %>_path, :class => "cancel" %>
-<%%- end -%>

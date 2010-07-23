@@ -1,5 +1,0 @@
-<h1><%%= t(:confirm_destruction) %></h1>
-<p><%%= t(:are_you_sure_you_want_to_remove) %> <strong><%%= t(:the_<%= singular_name %>) %></strong> (<%%= t(:no_undo) %>)?</p>
-<%%- labeled_form_for([:admin, @<%= singular_name %>], :html => { :method => :delete }) do |f| -%>	
-	<button type="submit"><span><%%= t(:delete) %></span></button> <%%= link_to t(:cancel), admin_<%= plural_name %>_url, :class => "cancel" %>
-<%%- end -%>
