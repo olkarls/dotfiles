@@ -1,0 +1,24 @@
+alias reload="source ~/.bashrc"
+
+function take {
+  mkdir $1
+  cd $1
+}
+
+function c {
+  cd ~/code/$1
+}
+
+alias ..='cd ..'
+
+function m {
+  cd ~/code/$1
+  mate .
+}
+
+alias tu='top -o cpu'   # cpu
+alias tm='top -o vsize' #memory
+
+function pless {
+  pygmentize $1 | less -r
+}

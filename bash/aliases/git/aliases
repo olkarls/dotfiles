@@ -1,0 +1,7 @@
+function gg() {
+  git commit -v -a -m "%*"
+}
+
+alias gs="git status"
+alias ga="git add ."
+alias gp="git push"
