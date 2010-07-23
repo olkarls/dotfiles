@@ -9,12 +9,18 @@ function c {
   cd ~/code/$1
 }
 
-alias ..='cd ..'
-
 function m {
   cd ~/code/$1
   mate .
 }
+
+function h {
+  cd ~/$1
+}
+
+function cd() { builtin cd "$@" && ls -lhG; }
+
+alias ..='cd ..'
 
 alias tu='top -o cpu'   # cpu
 alias tm='top -o vsize' #memory

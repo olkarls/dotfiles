@@ -5,3 +5,4 @@ function gg() {
 alias gs="git status"
 alias ga="git add ."
 alias gp="git push"
+alias gl="git pull"
