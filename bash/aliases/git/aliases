@@ -1,5 +1,5 @@
 function gg() {
-  git commit -v -a -m "%*"
+  git commit -v -a -m "$*"
 }
 
 alias gs="git status"
