@@ -1,0 +1,16 @@
+host olkarls
+  HostName  174.143.246.170
+  User      deploy
+  Port      30000
+  
+host black
+  HostName  213.180.83.115
+  User      deploy
+  Port      30000
+
+host ui
+  HostName  213.180.81.235
+  User      deploy
+  Port      666
+  
+# ln -s ~/bin/dotfiles/ssh/config ~/.ssh/config
