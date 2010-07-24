@@ -1,3 +1,56 @@
+. ~/bin/dotfiles/bash/aliases/generic/aliases
+. ~/bin/dotfiles/bash/aliases/git/aliases
+. ~/bin/dotfiles/bash/aliases/rails/aliases
+. ~/bin/dotfiles/bash/aliases/bundle/aliases
+
+# Generic
+alias reload="source ~/.bashrc"
+
+function take {
+  mkdir $1
+  cd $1
+}
+
+function c {
+  cd ~/code/$1
+}
+
+function m {
+  cd ~/code/$1
+  mate .
+}
+
+function h {
+  cd ~/$1
+}
+
+function cd() { builtin cd "$@" && ls -lhG; }
+
+alias ..='cd ..'
+
+alias tu='top -o cpu'   # cpu
+alias tm='top -o vsize' #memory
+
+function pless {
+  pygmentize $1 | less -r
+}
+
+# Git
+function gg() {
+  git commit -v -a -m "$*"
+}
+
+alias gs="git status"
+alias ga="git add ."
+alias gp="git push"
+alias gl="git pull"
+
+# Bundle
+alias bi='bundle install'
+alias be='bundle exec'
+
+# Rails
+
 function railsapp {
   template=$1
   appname=$2
