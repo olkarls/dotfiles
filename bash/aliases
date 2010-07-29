@@ -30,6 +30,8 @@ function pless {
   pygmentize $1 | less -r
 }
 
+alias git="git-achievements"
+
 # Git
 function gg() {
   git commit -v -a -m "$*"

@@ -1,2 +1,2 @@
 export EDITOR="mate -w"
-export PATH=$PATH:~/bin:/usr/local/mysql/bin
+export PATH=$PATH:~/bin:/usr/local/mysql/bin:~/bin/dotfiles/bash/git-achievements
