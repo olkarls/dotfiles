@@ -112,3 +112,6 @@ function sp {
 
 alias rp='sg'
 alias rmig='rake db:migrate'
+                            
+# frank
+alias fo='frankout --production ~/Sites/frank'
