@@ -1,6 +1,8 @@
 # Generic
 alias reload="source ~/.bashrc"
 
+alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
+
 function take {
   mkdir $1
   cd $1
