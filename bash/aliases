@@ -117,3 +117,7 @@ alias rmig='rake db:migrate'
                             
 # frank
 alias fo='frankout --production ~/Sites/frank'
+
+
+# RSpec
+alias rspec='rspec --color --format documentation'
