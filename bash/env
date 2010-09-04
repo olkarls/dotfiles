@@ -1,2 +1,2 @@
-export EDITOR="mate -w"
+export EDITOR="mate"
 export PATH=$PATH:~/bin:/usr/local/mysql/bin:~/bin/dotfiles/bash/git-achievements:~/code/frank_source/bin/
