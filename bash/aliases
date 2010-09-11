@@ -121,7 +121,7 @@ alias rmail='cat /var/mail/olkarls'
 function copy_remote() {
   cat $1 | ssh $2 "cat >> $3"
 }
-                            
+
 # frank
 alias fo='frankout --production ~/Sites/frank'
 
