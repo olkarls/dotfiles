@@ -2,7 +2,7 @@ host olkarls
   HostName  174.143.246.170
   User      deploy
   Port      30000
-  
+
 host black
   HostName  213.180.83.115
   User      deploy
@@ -12,7 +12,7 @@ host ui
   HostName  213.180.81.235
   User      deploy
   Port      666
-  
+
 host kb_db
   HostName  server.karlbertil.se
   User      karlbertil
@@ -23,5 +23,10 @@ host kb_web
   User      karlbertil
   Port      1222
 
-  
+host edberg
+  HostName  213.180.83.232
+  User      deploy
+  Port      30000
+
+
 # ln -s ~/bin/dotfiles/ssh/config ~/.ssh/config
