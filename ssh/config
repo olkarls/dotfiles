@@ -28,5 +28,10 @@ host edberg
   User      deploy
   Port      30000
 
+host oob
+  HostName  81.91.1.186
+  User      deploy
+  Port      30000
+
 
 # ln -s ~/bin/dotfiles/ssh/config ~/.ssh/config
