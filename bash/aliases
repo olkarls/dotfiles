@@ -55,14 +55,14 @@ function railsapp {
   template=$1
   appname=$2
   shift 2
-  rails $appname -m http://github.com/olkarls/rails-templates/raw/master/$template.rb -d mysql $@ 
+  rails $appname -m http://github.com/olkarls/rails-templates/raw/master/$template.rb -d mysql $@
 }
 
 function railsapp_db {
   template=$1
   appname=$2
   shift 2
-  rails $appname -m http://github.com/olkarls/rails-templates/raw/master/$template.rb $@  
+  rails $appname -m http://github.com/olkarls/rails-templates/raw/master/$template.rb $@
 }
 
 function ss {
@@ -128,3 +128,7 @@ alias fo='frankout --production ~/Sites/frank'
 
 # RSpec
 alias rspec='rspec --color --format documentation'
+
+t() {
+  tail -f -n5000 $1 | perl -pe "s/$2/\e[1;31;43m$&\e[0m/g"
+}
