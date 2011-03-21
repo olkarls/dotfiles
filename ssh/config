@@ -33,5 +33,9 @@ host oob
   User      deploy
   Port      30000
 
+host uig
+  HostName  useful-vm1.kund.griffel.se
+  User      deploy
+
 
 # ln -s ~/bin/dotfiles/ssh/config ~/.ssh/config
