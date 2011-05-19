@@ -10,6 +10,10 @@ function c {
   cd ~/code/$1
 }
 
+function cwp {
+  cd ~/code/$1/wp-content/themes/
+}
+
 function m {
   cd ~/code/$1
   mate .
