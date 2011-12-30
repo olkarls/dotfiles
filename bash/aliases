@@ -14,11 +14,6 @@ function cwp {
   cd ~/code/$1/wp-content/themes/
 }
 
-function m {
-  cd ~/code/$1
-  mate .
-}
-
 function h {
   cd ~/$1
 }
@@ -33,8 +28,6 @@ alias tm='top -o vsize' #memory
 function pless {
   pygmentize $1 | less -r
 }
-
-alias git="git-achievements"
 
 # Git
 function gg() {
@@ -52,22 +45,6 @@ alias gl="git pull"
 # Bundle
 alias bi='bundle install'
 alias be='bundle exec'
-
-# Rails
-
-function railsapp {
-  template=$1
-  appname=$2
-  shift 2
-  rails $appname -m http://github.com/olkarls/rails-templates/raw/master/$template.rb -d mysql $@
-}
-
-function railsapp_db {
-  template=$1
-  appname=$2
-  shift 2
-  rails $appname -m http://github.com/olkarls/rails-templates/raw/master/$template.rb $@
-}
 
 function ss {
   if [ -e script/rails ]; then
@@ -118,7 +95,7 @@ function sp {
 }
 
 alias rp='sg'
-alias rmig='rake db:migrate'
+alias rmig='bundle exec rake db:migrate'
 
 alias rmail='cat /var/mail/olkarls'
 

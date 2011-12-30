@@ -1,1 +1,1 @@
-export PATH=$PATH:~/bin:/usr/local/mysql/bin:~/bin/dotfiles/bash/git-achievements:~/code/frank_source/bin/:/etc/swfmill
+export PATH=$PATH:~/bin:/usr/local/mysql/bin:~/code/frank_source/bin/:/etc/swfmill
