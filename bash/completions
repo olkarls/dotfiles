@@ -1,3 +1,0 @@
-complete -C ~/bin/dotfiles/bash/completion_scripts/code_completion -o default c
-complete -C ~/bin/dotfiles/bash/completion_scripts/code_completion -o default m
-complete -C ~/bin/dotfiles/bash/completion_scripts/home_completion -o default h
