@@ -1,1 +1,2 @@
 export PATH=$PATH:~/bin:/usr/local/mysql/bin:~/code/frank_source/bin/:/etc/swfmill
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
