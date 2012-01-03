@@ -1,5 +1,5 @@
 # Generic
-alias reload="source ~/.bashrc"
+alias reload="source ~/.bash_profile"
 
 function take {
   mkdir $1
@@ -41,6 +41,8 @@ function ga() {
 alias gs="git status"
 alias gp="git push"
 alias gl="git pull"
+
+alias glog="git log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'"
 
 # Bundle
 alias bi='bundle install'
