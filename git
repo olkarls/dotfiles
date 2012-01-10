@@ -1,0 +1,25 @@
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow 
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[user]
+	name = Ola Karlsson
+	email = olkarls@gmail.com
+[github]
+	user = olkarls
+	token = 3ae105266ae8148e58e4040f74d3318d
+
+# ln -s ~/bin/dotfiles/git ~/.gitconfig
